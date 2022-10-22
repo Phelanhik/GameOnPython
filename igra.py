@@ -2,7 +2,7 @@ import pygame
 from character1 import MainCharacter
 from fight import Fight
 from choice_of_cadr import ChoiceOfCadrs
-
+from II import II
 
 
 def run():
@@ -13,7 +13,7 @@ def run():
     bg_color = pygame.image.load('sprites/bg1.jpg')
     bg_color = pygame.transform.scale(bg_color, (1200, 800))
     mycharacter = MainCharacter(screen,0,True)
-    hischaracter = MainCharacter(screen,600,False)
+    hischaracter = II(screen,600,False)
     fight = Fight(mycharacter, hischaracter)
     choise1 = ChoiceOfCadrs(mycharacter.y, mycharacter.dno, mycharacter.right, mycharacter.move)
     choise2 = ChoiceOfCadrs(hischaracter.y, hischaracter.dno, hischaracter.right, hischaracter.move)
