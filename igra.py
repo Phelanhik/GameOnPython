@@ -1,6 +1,9 @@
 import pygame
 from character1 import MainCharacter
 from fight import Fight
+from choice_of_cadr import ChoiceOfCadrs
+
+
 
 def run():
     pygame.init()
@@ -12,6 +15,18 @@ def run():
     mycharacter = MainCharacter(screen,0,True)
     hischaracter = MainCharacter(screen,600,False)
     fight = Fight(mycharacter, hischaracter)
+    choise1 = ChoiceOfCadrs(mycharacter.y, mycharacter.dno, mycharacter.right, mycharacter.move)
+    choise2 = ChoiceOfCadrs(hischaracter.y, hischaracter.dno, hischaracter.right, hischaracter.move)
+
+    def update_some_features():
+        choise1.y = mycharacter.y
+        choise1.dno = mycharacter.dno
+        choise1.right = mycharacter.right
+        choise1.move = mycharacter.move
+        choise2.y = hischaracter.y
+        choise2.dno = hischaracter.dno
+        choise2.right = hischaracter.right
+        choise2.move = hischaracter.move
 
     while running:
         clock.tick(20)
@@ -19,10 +34,12 @@ def run():
             if event.type == pygame.QUIT:
                 running = False
         screen.blit(bg_color, (0, 0))
-        mycharacter.output()
-        mycharacter.moving()
-        hischaracter.output()
+        mycharacter.moving() 
+        update_some_features()
         hischaracter.moving()
+        mycharacter.output(choise1.choising())
+        hischaracter.output(choise2.choising())
+        
         fight.fighting()
 
         pygame.display.flip()

@@ -1,5 +1,4 @@
 import pygame
-from character1 import MainCharacter
 
 
 class Fight:
@@ -8,11 +7,8 @@ class Fight:
         self.fighter2 = fighter2
 
     def is_colliding(self, x1, x2, step):
-        
         return x1 > x2 - step and x1 < x2 + step
         
-    
-
     def fighting(self):
         f1 = self.fighter1
         f2 = self.fighter2

@@ -1,7 +1,7 @@
-from shutil import move
+
 import pygame
-clock = pygame.time.Clock()
-clock.tick(20)
+
+
 class ChoiceOfCadrs():
     def __init__(self, y, dno, right, move):
         self.dno = dno
@@ -78,6 +78,4 @@ class ChoiceOfCadrs():
                 if self.n == 73:
                     self.n = 67
                     self.njpl = 67
-        print(self.n)
         return self.n
-        
