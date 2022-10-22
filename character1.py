@@ -23,7 +23,7 @@ class MainCharacter():
         self.njpl = 67
         self.cadr = 0
         self.health = 100
-        self.damage = 1
+        self.damage = 10
         self.heart_position = [self.x, self.y - 50]
         self.xp = 0
         self.yp = 0
@@ -38,6 +38,8 @@ class MainCharacter():
         punch_image = pygame.image.load(punch_image_link)
         self.punch_image = pygame.transform.scale(punch_image, (20,20))
         
+    def get_punch_position(self):
+        return self.x + 220
 
     def punching(self):
         keys = pygame.key.get_pressed()

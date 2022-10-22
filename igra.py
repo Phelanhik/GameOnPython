@@ -13,8 +13,6 @@ def run():
     hischaracter = MainCharacter(screen,600,False)
     fight = Fight(mycharacter, hischaracter)
 
-       
-
     while running:
         clock.tick(20)
         for event in pygame.event.get():
