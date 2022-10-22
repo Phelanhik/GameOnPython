@@ -24,7 +24,7 @@ class MainCharacter():
         self.cadr = 0
         self.health = 100
         self.damage = 1
-        self.heart = [self.x, self.y - 50]
+        self.heart_position = [self.x, self.y - 50]
         self.xp = 0
         self.yp = 0
         self.galery = []
@@ -181,7 +181,9 @@ class MainCharacter():
         if self.y >= self.dno:
             self.y = self.dno
             self.speedD = 30
-        self.heart = [self.x, self.y - 50]
+
+        self.heart_position = [self.x, self.y - 50]
+
         if keys[pygame.K_x]:
             self.punching()
         elif keys[pygame.K_z]:

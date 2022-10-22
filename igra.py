@@ -1,6 +1,6 @@
 import pygame
 from character1 import MainCharacter
-
+from fight import Fight
 
 def run():
     pygame.init()
@@ -10,20 +10,10 @@ def run():
     bg_color = pygame.image.load('sprites/bg1.jpg')
     bg_color = pygame.transform.scale(bg_color, (1200, 800))
     mycharacter = MainCharacter(screen,0,True)
-    hischaracter = MainCharacter(screen,800,False)
+    hischaracter = MainCharacter(screen,600,False)
+    fight = Fight(mycharacter, hischaracter)
 
-    def fighting():
-        print(mycharacter.xp, hischaracter.xp, hischaracter.heart)
-        if mycharacter.xp > hischaracter.heart[1]-50 and mycharacter.xp < hischaracter.heart[1]+50:
-            hischaracter.health -= mycharacter.damage
-            print('попал')
-        if hischaracter.xp > mycharacter.heart[1]-5 and hischaracter.xp < mycharacter.heart[1]+5:
-            mycharacter.health -= hischaracter.damage
-            print('jqпопал')
-        if mycharacter.health <= 0 or hischaracter.health <= 0:
-            mycharacter.screen.blit(mycharacter.galery[1], (mycharacter.x, mycharacter.y))
-            print('deapth')
-            exit()
+       
 
     while running:
         clock.tick(20)
@@ -35,7 +25,7 @@ def run():
         mycharacter.moving()
         hischaracter.output()
         hischaracter.moving()
-        fighting()
+        fight.fighting()
 
         pygame.display.flip()
 clock = pygame.time.Clock()
