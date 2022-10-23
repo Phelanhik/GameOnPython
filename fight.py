@@ -18,7 +18,7 @@ class Fight:
             if self.is_colliding(f1.get_punch_position(), f2.heart_position[0], 50) and f1.hit:
                 f2.health -= f1.damage
                 print('попал')
-                print(f1.health, f2.health)
+                print(f1.health, f2.health)       
             if self.is_colliding(f2.get_punch_position(), f1.heart_position[0], 50) and f2.hit:
                 f1.health -= f2.damage
                 print('другой попал')

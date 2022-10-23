@@ -20,15 +20,15 @@ class ChoiceOfCadrsII():
         self.njp = 53
         self.njpl = 67
         self.actions = {
-            'rght': 0,
-            'lft': 1,
-            'up': 2,
-            'x': 3,
+            'rght': [],
+            'lft': [],
+            'up': [],
+            'x': [0, 1, 2, 3, 4, 5, 7, 8, 9, 10, 12, 13, 14, 15, 6, 11, 3, 7, 16, 17, 18, 19, 20]
         }
 
     def choising(self):
         
-        if self.a != self.actions['x']:
+        if self.a not in self.actions['x']:
             if self.y >= self.dno:
                 if self.right:
                     self.n = self.nr
@@ -60,7 +60,7 @@ class ChoiceOfCadrsII():
                     self.n = 44
                 elif not self.right:
                     self.n = 45
-        elif self.a == self.actions['x'] and self.y == self.dno:
+        elif self.a in self.actions['x'] and self.y == self.dno:
             if self.right:
                 self.n = self.npr
                 self.npr += 1
@@ -73,7 +73,7 @@ class ChoiceOfCadrsII():
                 if self.n == 66:
                     self.n = 60
                     self.npl = 60
-        elif self.a == self.actions['x'] and self.y < self.dno:
+        elif self.a in self.actions['x'] and self.y < self.dno:
             if self.right:
                 self.n = self.njp
                 self.njp += 1

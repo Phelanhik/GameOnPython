@@ -31,14 +31,14 @@ class II():
         punch_image = pygame.image.load(punch_image_link)
         self.punch_image = pygame.transform.scale(punch_image, (20,20))
         self.actions = {
-            'rght': 0,
-            'lft': 1,
-            'up': 2,
-            'x': 3,
+            'rght': [],
+            'lft': [],
+            'up': [],
+            'x': [0, 1, 2, 3, 4, 5, 7, 8, 9, 10, 12, 13, 14, 15, 6, 11, 3, 7, 16, 17, 18, 19, 20]
         }
 
     def creating_a(self):
-        self.aa = random.randint(0,3)
+        self.aa = random.randint(0,20)
         return self.aa
 
     def get_punch_position(self):
@@ -49,7 +49,7 @@ class II():
 
     def punching(self):
         self.a = self.creating_a()
-        if self.a == self.actions['x']:
+        if self.a in self.actions['x']:
             if self.y < self.dno:
                 if self.right:
                     self.cadr += 1
@@ -94,9 +94,9 @@ class II():
         self.screen.blit(self.galery[self.k], (self.x, self.y))
         
     def moving(self):
-        b = random.randint(0,3)
+        b = random.randint(0,20)
         if b != self.actions['x'] or self.y < self.dno:
-            if b == self.actions['lft']:
+            if b in self.actions['lft']:
                 self.x -= self.speed
                 if not self.right:
                     None
@@ -104,7 +104,7 @@ class II():
                     self.right = False
                 if self.x < 0:
                     self.x = 0
-            elif b == self.actions['rght']: 
+            elif b in self.actions['rght']: 
                 self.x += self.speed
                 if self.right:
                     None
@@ -112,14 +112,14 @@ class II():
                     self.right = True
                 if self.x > 1000:
                     self.x = 1000
-        if b == self.actions['up']:
+        if b in self.actions['up']:
             self.y -= self.speedD
             self.speedD -= 3.5
             if self.y < 0:
                 self.y = 0
             if self.y > self.dno:
                 self.y = self.dno
-        if b != self.actions['up'] and self.y >= self.dno and (b == self.actions['lft'] or b == self.actions['rght']):
+        if b not in self.actions['up'] and self.y >= self.dno and (b in self.actions['lft'] or b in self.actions['rght']):
             self.move = True
         else:
             self.move = False
@@ -132,5 +132,8 @@ class II():
 
         self.heart_position = [self.x, self.y - 50]
 
-        if b == self.actions['x']:
+        if b in self.actions['x']:
             self.punching()
+        
+
+    
