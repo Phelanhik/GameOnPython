@@ -4,6 +4,7 @@ import random
 class II():
  
     def __init__(self,screen,x,right):
+        self.a = 0
         self.screen = screen
         self.x = x
         self.dno = 350
@@ -36,6 +37,10 @@ class II():
             'x': 3,
         }
 
+    def creating_a(self):
+        self.aa = random.randint(0,3)
+        return self.aa
+
     def get_punch_position(self):
         if self.right:
             return self.x + 220
@@ -43,8 +48,8 @@ class II():
             return self.x - 20
 
     def punching(self):
-        a = random.randint(0,3)
-        if a == self.actions['x']:
+        self.a = self.creating_a()
+        if self.a == self.actions['x']:
             if self.y < self.dno:
                 if self.right:
                     self.cadr += 1
@@ -129,6 +134,3 @@ class II():
 
         if b == self.actions['x']:
             self.punching()
-        
-
-    
