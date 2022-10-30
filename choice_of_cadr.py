@@ -18,58 +18,58 @@ class ChoiceOfCadrs():
     def choising(self):
         keys = pygame.key.get_pressed()
         if not keys[pygame.K_x]:
-            if self.y >= self.dno:
-                if self.right:
+            if self.character.y >= self.character.dno:
+                if self.character.right:
                     self.n = self.nr
                     self.nr += 1
                     if self.n == 14:
                         self.n = 1
                         self.nr = 1
-                elif not self.right:
+                elif not self.сharacter.right:
                     self.n = self.nl
                     self.nl += 1
                     if self.n == 28:
                         self.n = 15
                         self.nl = 15
-                if self.move:
-                    if self.right:
+                if self.character.move:
+                    if self.character.right:
                         self.n = self.nmr
                         self.nmr += 1
                         if self.n == 36:
                             self.n = 29
                             self.nmr = 29
-                    elif not self.right:
+                    elif not self.character.right:
                         self.n = self.nml
                         self.nml += 1
                         if self.n == 44:
                             self.n = 37
                             self.nml = 37
-            if self.y < self.dno:
-                if self.right:
+            if self.character.y < self.character.dno:
+                if self.character.right:
                     self.n = 44
-                elif not self.right:
+                elif not self.character.right:
                     self.n = 45
-        elif keys[pygame.K_x] and self.y == self.dno:
-            if self.right:
+        elif keys[pygame.K_x] and self.character.y == self.character.dno:
+            if self.character.right:
                 self.n = self.npr
                 self.npr += 1
                 if self.n == 52:
                     self.n = 46
                     self.npr = 46
-            elif not self.right:
+            elif not self.character.right:
                 self.n = self.npl
                 self.npl += 1
                 if self.n == 66:
                     self.n = 60
                     self.npl = 60
-        elif keys[pygame.K_x] and self.y < self.dno:
-            if self.right:
+        elif keys[pygame.K_x] and self.character.y < self.character.dno:
+            if self.character.right:
                 self.n = self.njp
                 self.njp += 1
                 if self.n == 60:
                     self.n = 53
                     self.njp = 53
-            elif not self.right:
+            elif not self.character.right:
                 self.n = self.njpl
                 self.njpl += 1
                 if self.n == 73:

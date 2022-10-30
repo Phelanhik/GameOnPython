@@ -18,10 +18,7 @@ def run():
     hischaracter = II(screen,600,False)
     fight = Fight(mycharacter, hischaracter)
     choise1 = ChoiceOfCadrs(mycharacter)
-    choise2 = ChoiceOfCadrsII(hischaracter, hischaracter.a)
-
-    def update_some_features():
-        choise2.a = hischaracter.a
+    choise2 = ChoiceOfCadrsII(hischaracter)
 
     while running:
         clock.tick(20)
@@ -30,8 +27,6 @@ def run():
                 running = False
         screen.blit(bg_color, (0, 0))
         mycharacter.moving() 
-        update_some_features()
-      
         hischaracter.moving()
         mycharacter.output(choise1.choising())
         hischaracter.output(choise2.choising())

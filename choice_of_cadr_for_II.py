@@ -4,9 +4,8 @@ from II import II
 
 
 class ChoiceOfCadrsII():
-    def __init__(self, character, a):
+    def __init__(self, character):
         self.character = character
-        self.a = a
         self.n = 0
         self.nr = 1
         self.nl = 15
@@ -25,59 +24,59 @@ class ChoiceOfCadrsII():
 
     def choising(self):
         
-        if self.a not in self.actions['x']:
-            if self.y >= self.dno:
-                if self.right:
+        if self.character.a not in self.actions['x']:
+            if self.character.y >= self.character.dno:
+                if self.character.right:
                     self.n = self.nr
                     self.nr += 1
                     if self.n == 14:
                         self.n = 1
                         self.nr = 1
-                elif not self.right:
+                elif not self.character.right:
                     self.n = self.nl
                     self.nl += 1
                     if self.n == 28:
                         self.n = 15
                         self.nl = 15
-                if self.move:
-                    if self.right:
+                if self.character.move:
+                    if self.character.right:
                         self.n = self.nmr
                         self.nmr += 1
                         if self.n == 36:
                             self.n = 29
                             self.nmr = 29
-                    elif not self.right:
+                    elif not self.character.right:
                         self.n = self.nml
                         self.nml += 1
                         if self.n == 44:
                             self.n = 37
                             self.nml = 37
-            if self.y < self.dno:
-                if self.right:
+            if self.character.y < self.character.dno:
+                if self.character.right:
                     self.n = 44
-                elif not self.right:
+                elif not self.character.right:
                     self.n = 45
-        elif self.a in self.actions['x'] and self.y == self.dno:
-            if self.right:
+        elif self.character.a in self.actions['x'] and self.character.y == self.character.dno:
+            if self.character.right:
                 self.n = self.npr
                 self.npr += 1
                 if self.n == 52:
                     self.n = 46
                     self.npr = 46
-            elif not self.right:
+            elif not self.character.right:
                 self.n = self.npl
                 self.npl += 1
                 if self.n == 66:
                     self.n = 60
                     self.npl = 60
-        elif self.a in self.actions['x'] and self.y < self.dno:
-            if self.right:
+        elif self.character.a in self.actions['x'] and self.character.y < self.character.dno:
+            if self.character.right:
                 self.n = self.njp
                 self.njp += 1
                 if self.n == 60:
                     self.n = 53
                     self.njp = 53
-            elif not self.right:
+            elif not self.character.right:
                 self.n = self.njpl
                 self.njpl += 1
                 if self.n == 73:
