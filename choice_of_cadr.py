@@ -3,6 +3,9 @@ import pygame
 
 
 class ChoiceOfCadrs():
+    def __init__(self, character):
+        self.character = character
+    
     def __init__(self, y, dno, right, move):
         self.dno = dno
         self.right = right
