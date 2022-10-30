@@ -17,8 +17,8 @@ def run():
     mycharacter = MainCharacter(screen,0,True)
     hischaracter = II(screen,600,False)
     fight = Fight(mycharacter, hischaracter)
-    choise1 = ChoiceOfCadrs(mycharacter.y, mycharacter.dno, mycharacter.right, mycharacter.move)
-    choise2 = ChoiceOfCadrsII(hischaracter.y, hischaracter.dno, hischaracter.right, hischaracter.move, hischaracter.a)
+    choise1 = ChoiceOfCadrs(mycharacter)
+    choise2 = ChoiceOfCadrsII(hischaracter, hischaracter.a)
 
     def update_some_features():
         choise2.a = hischaracter.a

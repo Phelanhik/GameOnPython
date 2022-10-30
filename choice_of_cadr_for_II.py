@@ -4,16 +4,9 @@ from II import II
 
 
 class ChoiceOfCadrsII():
-    def __init__(self, character):
+    def __init__(self, character, a):
         self.character = character
-    
-    
-    def __init__(self, y, dno, right, move, a):
         self.a = a
-        self.dno = dno
-        self.right = right
-        self.move = move
-        self.y = y
         self.n = 0
         self.nr = 1
         self.nl = 15
