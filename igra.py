@@ -21,14 +21,6 @@ def run():
     choise2 = ChoiceOfCadrsII(hischaracter.y, hischaracter.dno, hischaracter.right, hischaracter.move, hischaracter.a)
 
     def update_some_features():
-        choise1.y = mycharacter.y
-        choise1.dno = mycharacter.dno
-        choise1.right = mycharacter.right
-        choise1.move = mycharacter.move
-        choise2.y = hischaracter.y
-        choise2.dno = hischaracter.dno
-        choise2.right = hischaracter.right
-        choise2.move = hischaracter.move
         choise2.a = hischaracter.a
 
     while running:

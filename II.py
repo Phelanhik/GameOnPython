@@ -31,14 +31,15 @@ class II():
         punch_image = pygame.image.load(punch_image_link)
         self.punch_image = pygame.transform.scale(punch_image, (20,20))
         self.actions = {
-            'rght': [],
-            'lft': [],
-            'up': [],
-            'x': [0, 1, 2, 3, 4, 5, 7, 8, 9, 10, 12, 13, 14, 15, 6, 11, 3, 7, 16, 17, 18, 19, 20]
+            'rght': [0, 1, 2, 7, 8, 9],
+            'lft': [3, 4, 5, 10, 11, 12],
+            'up': [6, 13],
+            'x': [9, 13, 14, 15, 6, 11, 3, 7, 16, 17, 18, 19, 20]
         }
+        self.amax = 100
 
     def creating_a(self):
-        self.aa = random.randint(0,20)
+        self.aa = random.randint(0,30)
         return self.aa
 
     def get_punch_position(self):
@@ -94,7 +95,7 @@ class II():
         self.screen.blit(self.galery[self.k], (self.x, self.y))
         
     def moving(self):
-        b = random.randint(0,20)
+        b = random.randint(0,self.amax)
         if b != self.actions['x'] or self.y < self.dno:
             if b in self.actions['lft']:
                 self.x -= self.speed
