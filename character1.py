@@ -20,7 +20,6 @@ class MainCharacter():
         self.xp = 0
         self.yp = 0
         self.galery = []
-        
         for n in range(73):
             path = 'sprites/'
             character_image_link = (path + str(n+1) + '.png')

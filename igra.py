@@ -1,5 +1,4 @@
 import pygame
-import random
 from character1 import MainCharacter
 from fight import Fight
 from choice_of_cadr import ChoiceOfCadrs
@@ -25,7 +24,7 @@ def run():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
-        screen.blit(bg_color, (0, 0))
+        screen.blit(bg_color,  (0, 0))
         mycharacter.moving() 
         hischaracter.moving()
         mycharacter.output(choise1.choising())

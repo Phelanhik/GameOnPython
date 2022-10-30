@@ -25,7 +25,7 @@ class ChoiceOfCadrs():
                     if self.n == 14:
                         self.n = 1
                         self.nr = 1
-                elif not self.сharacter.right:
+                elif not self.character.right:
                     self.n = self.nl
                     self.nl += 1
                     if self.n == 28:
