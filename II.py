@@ -15,6 +15,7 @@ class II():
         self.move = False
         self.hit = False
         self.cadr = 0
+        self.cadr_jump = 0
         self.health = 100
         self.damage = 5
         self.heart_position = [self.x, self.y - 50]
@@ -42,50 +43,44 @@ class II():
         self.aa = random.randint(0,30)
         return self.aa
 
-    def get_punch_position(self):
-        if self.right:
-            return self.x + 220
-        elif not self.right:
-            return self.x - 20
-
     def punching(self):
         self.a = self.creating_a()
         if self.a in self.actions['x']:
             if self.y < self.dno:
                 if self.right:
-                    self.cadr += 1
-                    if self.cadr%10 == 0:
+                    self.cadr_jump += 1
+                    self.xp = self.x + 220
+                    self.yp = self.y + 200
+                    if (self.cadr_jump + 9) %10  == 0:
                         self.hit = True
-                        self.xp = self.x + 220
-                        self.yp = self.y + 200
                         self.screen.blit(self.punch_image, (self.xp, self.yp))
                     else:
                         self.hit = False
                 else:
-                    self.cadr += 1
-                    if self.cadr%10 == 0:
+                    self.cadr_jump += 1
+                    self.xp = self.x - 20
+                    self.yp = self.y + 200
+                    if (self.cadr_jump + 9) %10  == 0:
                         self.hit = True
-                        self.xp = self.x - 20
-                        self.yp = self.y + 200
                         self.screen.blit(self.punch_image, (self.xp, self.yp))
                     else:
                         self.hit = False
             elif self.y >= self.dno:
                 if self.right:
                     self.cadr += 1
+                    self.xp = self.x + 220
+                    self.yp = self.y + 130
                     if self.cadr%3 == 0:
                         self.hit = True
-                        self.xp = self.x + 220
-                        self.yp = self.y + 130
                         self.screen.blit(self.punch_image, (self.xp, self.yp))
                     else:
                         self.hit = False
                 else:
                     self.cadr += 1
+                    self.xp = self.x - 20
+                    self.yp = self.y + 130
                     if self.cadr%3 == 0:
                         self.hit = True
-                        self.xp = self.x - 20
-                        self.yp = self.y + 130
                         self.screen.blit(self.punch_image, (self.xp, self.yp))
                     else:
                         self.hit = False
@@ -131,7 +126,7 @@ class II():
             self.y = self.dno
             self.speedD = 30
 
-        self.heart_position = [self.x, self.y - 50]
+        self.heart_position = [self.x + 125, self.y - 50]
 
         if b in self.actions['x']:
             self.punching()

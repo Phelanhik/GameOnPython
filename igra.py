@@ -18,6 +18,8 @@ def run():
     fight = Fight(mycharacter, hischaracter)
     choise1 = ChoiceOfCadrs(mycharacter)
     choise2 = ChoiceOfCadrsII(hischaracter)
+    mycharacter.heart_position = [mycharacter.x, mycharacter.y - 50]
+    hischaracter.heart_position = [hischaracter.x + 125, hischaracter.y - 50]
 
     while running:
         clock.tick(20)
@@ -31,7 +33,6 @@ def run():
         hischaracter.output(choise2.choising())
         
         fight.fighting()
-
         pygame.display.flip()
 clock = pygame.time.Clock()
 run()
